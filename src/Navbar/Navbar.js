@@ -15,7 +15,7 @@ export default function Navbar({toggle}) {
             <div className=" md:block hidden pr-64">
 
             <a className="py-4 text-2xl"  target="_blank" href="https://shuibabdillahi.netlify.app/" >Porfolio</a>
-          
+          <Link to="/blog">Blog</Link>
       
 
             </div>

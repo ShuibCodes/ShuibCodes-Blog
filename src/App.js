@@ -24,15 +24,15 @@ function App() {
 
   
 
-  const goToBlog = () => {
+//   const goToBlog = () => {
     
-    history.push("/blog");
-  }
+//     history.push("/blog");
+//   }
 
-useEffect(() => {
-    goToBlog()
+// useEffect(() => {
+//     goToBlog()
 
-}, []);
+// }, []);
 
   return (
     <>
