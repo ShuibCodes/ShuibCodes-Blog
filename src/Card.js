@@ -13,24 +13,11 @@ function Card(props) {
   
   console.log(props)
     return (
-            
-            <div className="container">
-  <div className="row">
-    <div className="col-12">
-      <article className="blog-card">
-        <div className="blog-card__background">
-          <div className="card__background--wrapper">
-            <div className="card__background--main" style={{backgroundImage: "url('https://i.pinimg.com/564x/7f/bb/97/7fbb9793b574c32f5d28cae0ea5c557f.jpg')"}}/>
-              <div className="card__background--layer"></div>
-            </div>
-          </div>
-
-        <div className="blog-card__head">
-        </div>
-        <div className="blog-card__info">
-          <h5>{props.title}</h5>
-          <p>{trimIntro(props.introduction) + "..."}</p>
-          
+          <>  
+            <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-2   ">
+            <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 m-auto  my-4 p-4 w-100 shadow cursor-pointer rounded-t border-8 border-opacity-5 border-b-8 ">
+          <div className="">
+          <h5 className="whitespace-nowrap p-2 font-mono text-lg " >{props.title}</h5>             
         <Link to={{ pathname: '/article',
               state: {
               title: props.title,
@@ -39,16 +26,21 @@ function Card(props) {
               mainBody2:props.mainBody2
               }
               }}>
-     <a href="#" class="btn btn--with-icon"><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</a>
-        </Link>
+  <button>read</button>
+         </Link>
         </div>
-      </article>
-    </div>
-  </div>
-   
+        </div>
+            </div>
+
+     
+    
+
+            
+
+    </>
     
   
-</div>
+
 
     )   
 }

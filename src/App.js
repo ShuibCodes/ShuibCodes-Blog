@@ -5,7 +5,7 @@ import '../src/index.css'
 import Navbar from './Navbar/Navbar';
 import Dropdown from './Navbar/Dropdown';
 import Blog from './Blog'
-import {Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Article from '../src/Article'
 function App() {
 
@@ -34,16 +34,22 @@ function App() {
         <Navbar toggle={toggle} />
         <Dropdown isOpen={isOpen} toggle={toggle} />
        
-      
-        <Route path='/blog'>
-     <Blog />
-    </Route> 
+      <Router>
+      <Route path='/blog'>
+      <Blog/>
+      </Route>
+   
+
     <Route path='/article'>
      <Article />
     </Route> 
+      </Router>
+       
 
     </>
   );
 }
 
 export default App;
+
+

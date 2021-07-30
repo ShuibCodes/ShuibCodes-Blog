@@ -28,7 +28,7 @@ function Blog() {
       <div>
         {selectedBlog !== null ? blogs.map((blog =>
           <div  className="grid"> 
-          <Card title={blog.fields.title} introduction={blog.fields.introduction} mainBody1={blog.fields.mainBody1} mainBody2={blog.fields.mainBody2} setSelectedBlog={selectedBlog} />  
+          <Card title={blog.fields.title} introduction={blog.fields.introduction} mainBody1={blog.fields.Body} mainBody2={blog.fields.mainBody2} setSelectedBlog={selectedBlog} />  
           </div>
 
 
