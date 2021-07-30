@@ -5,46 +5,55 @@ import '../src/index.css'
 import Navbar from './Navbar/Navbar';
 import Dropdown from './Navbar/Dropdown';
 import Blog from './Blog'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory
+} from "react-router-dom";
 import Article from '../src/Article'
 function App() {
 
   const [isOpen, setIsOpen] = useState(false)
+  const history = useHistory();
 
   const toggle = () => {
     setIsOpen(!isOpen)
   }
 
-  useEffect(() => {
-    const hideMenu = () => {
-      if(window.innerWidth > 768 && isOpen ){
-        setIsOpen(false)
-      }
+  
 
-    }
-      window.addEventListener('resize', hideMenu)
+  const goToBlog = () => {
+    
+    history.push("/blog");
+  }
 
-      return () => {
-        window.removeEventListener('resize', hideMenu)
-      }
-  }, []);
+useEffect(() => {
+    goToBlog()
+
+}, []);
 
   return (
     <>
         <Navbar toggle={toggle} />
         <Dropdown isOpen={isOpen} toggle={toggle} />
        
-      <Router>
-      <Route path='/blog'>
-      <Blog/>
-      </Route>
-   
+        <Switch>
+          <Route path="/blog">
+            <Blog/>
+          </Route>
+          <Route path="/Article">
+            <Article/>
+          </Route>
+          <Route path="/">
+          
+          </Route>
+ 
+        </Switch>
+     
 
-    <Route path='/article'>
-     <Article />
-    </Route> 
-      </Router>
-       
+
 
     </>
   );
